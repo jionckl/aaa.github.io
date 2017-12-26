@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[slsconfig]]></title>
+    <url>%2F2017%2F12%2F26%2Fslsconfig%2F</url>
+    <content type="text"><![CDATA[Config sls analog1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950set sls enableshow sysset pim-lockout yesset max-ip-registrations 150set date-format dd/mm/yyset ip-codec-set g.711muexitshow mg list_configslsset slot-config v2 mm711set fac ars1 9set fac ars2 8set fac hold *30show facstation 1313 analogset port v208set cor unrestrictedset trunk-destination yesset name xxxxshowexitstation 1314 ipset password 1234exittrunk-group 1 loop-startset tac #1set dial dtmfadd port v201add port v202add port v203add port v204set busy-disconnect yesset incoming-destination 1313set name XXXXshowexitdial-pattern 1set type hnpaset max-length 11set max-length 11set tgnum 1set deny noexitshow dianl //0-9exitset sls disableset sls enablecopy ruanning-config startup-configshow faultshow sls]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[Hello World]]></title>
     <url>%2F2017%2F12%2F24%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick Starth1 woainih2 wo bu aini wo hen ainiCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
