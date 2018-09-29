@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[network config gateway]]></title>
-    <url>%2F2018%2F09%2F29%2Fnetwork-config-gateway%2F</url>
-    <content type="text"><![CDATA[G430set port redundancy 10/3 10/4 on “1”set port spantree disable 10/3set port spantree disable 10/4set port negotiation 10/3 disableSet port duplex 10/3 fullset port speed 10/3 100MBset port name 10/3 Activeset port negotiation 10/4 disableSet port duplex 10/4 fullset port speed 10/4 100MBset port name 10/4 StandbyG450set port redundancy 10/5 10/6 on “1”set port spantree disable 10/5set port spantree disable 10/6set port negotiation 10/5 disableSet port duplex 10/5 fullset port speed 10/5 1GBset port name 10/5 Activeset port negotiation 10/6 disableSet port duplex 10/6 fullset port speed 10/6 1GBset port name 10/6 Standby]]></content>
+    <title><![CDATA[gateway network config]]></title>
+    <url>%2F2018%2F09%2F29%2Fgateway-network-config%2F</url>
+    <content type="text"><![CDATA[G4301234567891011set port redundancy 10/3 10/4 on &quot;1&quot;set port spantree disable 10/3set port spantree disable 10/4set port negotiation 10/3 disableSet port duplex 10/3 fullset port speed 10/3 100MBset port name 10/3 Activeset port negotiation 10/4 disableSet port duplex 10/4 fullset port speed 10/4 100MB set port name 10/4 Standby G4501234567891011set port redundancy 10/5 10/6 on &quot;1&quot;set port spantree disable 10/5set port spantree disable 10/6set port negotiation 10/5 disableSet port duplex 10/5 fullset port speed 10/5 1GBset port name 10/5 Activeset port negotiation 10/6 disableSet port duplex 10/6 fullset port speed 10/6 1GB set port name 10/6 Standby]]></content>
   </entry>
   <entry>
     <title><![CDATA[slsconfig]]></title>
