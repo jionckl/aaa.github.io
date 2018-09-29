@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[network config gateway]]></title>
+    <url>%2F2018%2F09%2F29%2Fnetwork-config-gateway%2F</url>
+    <content type="text"><![CDATA[G430set port redundancy 10/3 10/4 on “1”set port spantree disable 10/3set port spantree disable 10/4set port negotiation 10/3 disableSet port duplex 10/3 fullset port speed 10/3 100MBset port name 10/3 Activeset port negotiation 10/4 disableSet port duplex 10/4 fullset port speed 10/4 100MBset port name 10/4 StandbyG450set port redundancy 10/5 10/6 on “1”set port spantree disable 10/5set port spantree disable 10/6set port negotiation 10/5 disableSet port duplex 10/5 fullset port speed 10/5 1GBset port name 10/5 Activeset port negotiation 10/6 disableSet port duplex 10/6 fullset port speed 10/6 1GBset port name 10/6 Standby]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[slsconfig]]></title>
     <url>%2F2017%2F12%2F26%2Fslsconfig%2F</url>
     <content type="text"><![CDATA[Config sls analog1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950set sls enableshow sysset pim-lockout yesset max-ip-registrations 150set date-format dd/mm/yyset ip-codec-set g.711muexitshow mg list_configslsset slot-config v2 mm711set fac ars1 9set fac ars2 8set fac hold *30show facstation 1313 analogset port v208set cor unrestrictedset trunk-destination yesset name xxxxshowexitstation 1314 ipset password 1234exittrunk-group 1 loop-startset tac #1set dial dtmfadd port v201add port v202add port v203add port v204set busy-disconnect yesset incoming-destination 1313set name XXXXshowexitdial-pattern 1set type hnpaset max-length 11set max-length 11set tgnum 1set deny noexitshow dianl //0-9exitset sls disableset sls enablecopy ruanning-config startup-configshow faultshow sls]]></content>
