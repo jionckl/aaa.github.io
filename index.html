@@ -296,6 +296,208 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/29/test/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ckl">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/456.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="莫明堂">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/29/test/" itemprop="url">IPSI</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-29T20:53:34+08:00">
+                2018-09-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="IPSI"><a href="#IPSI" class="headerlink" title="IPSI"></a>IPSI</h2><p><img src="/test/20180929090135821.png" alt=""></p>
+<h2 id="配置范例："><a href="#配置范例：" class="headerlink" title="配置范例："></a>配置范例：</h2><p>C:> arp -d //清除arp缓存</p>
+<p>C:> telnet 192.11.13.6 //telnet到ipsi</p>
+<p>ipsilogin</p>
+<p>Login:craft //帐号</p>
+<p>Password:serv1ces //密码</p>
+<p>[IPADMIN]:set control interface 192.168.40.21 255.255.255.0 //配置控制接口IP</p>
+<p>[IPADMIN]:set control gateway 192.168.40.1 //配置控制接口网关</p>
+<p>[IPADMIN]:exit //退出</p>
+<p>重新连接查看网络配置</p>
+<p>[IPADMIN]:show control interface //查看配置信息是否生效</p>
+<p>Control Network IP Address = 10.228.64.31</p>
+<p>Control Network Subnetmask = 255.255.252.0</p>
+<p>Control Network Default Gateway = 10.228.64.1</p>
+<p>IPSI is not configured for DHCP IP address administration</p>
+<p>配置速率、双工,port 1为网络端口，port 2为service端口</p>
+<p>[IPADMIN]:set port negotiation 1 disable //关闭自适应</p>
+<p>[IPADMIN]:set port speed 1 100MB //设置100M</p>
+<p>[IPADMIN]:set port duplex 1 full //设置全双工</p>
+<p>[IPADMIN]:reset //保存配置</p>
+<p>重新连接查看配置是否生效</p>
+<p>[IPADMIN]:show port 1 //查看控制接口速率</p>
+<pre><code>Link:established
+
+Authonegotiation: disabled
+
+Speed:100Mb
+
+Duplex: full
+
+Flow control: disabled
+</code></pre><p>change system-parameters ipserver-interface                     Page   1 of   1</p>
+<pre><code>IP SERVER INTERFACE (IPSI) SYSTEM PARAMETERS
+</code></pre><p>SERVER INFORMATION</p>
+<p>   Primary Control Subnet Address:</p>
+<p> Secondary Control Subnet Address:</p>
+<p>OPTIONS</p>
+<pre><code>            Switch Identifier: A
+
+IPSI Control of Port Networks: enabled
+
+       A-side IPSI Preference: enabled
+
+   IPSI Socket Sanity Timeout: 15
+</code></pre><p>QoS PARAMETERS</p>
+<pre><code>  802.1p: 6
+
+DiffServ: 46
+</code></pre><p>add ipserver-interface 1 //CM下添加IPSI</p>
+<pre><code>IP SERVER INTERFACE (IPSI) ADMINISTRATION - PORT NETWORK 1
+</code></pre><p>   IP Control? y             Ignore Connectivity in Server Arbitration? n</p>
+<p>   Encryption? n        Administer secondary ip server interface board? y</p>
+<p> PRIMARY IPSI                                  QoS AND ETHERNET SETTINGS</p>
+<pre><code>Location:  1A01                 Use System Level Parameter Values? y
+</code></pre><p>  Subnet Mask: /22                                              802.1p: 6</p>
+<p>   IP Address: 10.228.64.31                                   DiffServ: 46</p>
+<pre><code>Gateway: 10.228.64.1                                        Auto? n
+
+                                                           Speed: 100Mbps
+
+                                                          Duplex: Full
+</code></pre><p> SECONDARY IPSI                                QoS AND ETHERNET SETTINGS</p>
+<pre><code>Location:  1B01                 Use System Level Parameter Values? y
+</code></pre><p>  Subnet Mask: /22                                              802.1p: 6</p>
+<p>   IP Address: 10.228.64.32                                   DiffServ: 46</p>
+<pre><code>Gateway: 10.228.64.1                                        Auto? n
+
+                                                           Speed: 100Mbps
+
+                                                          Duplex: Full
+</code></pre><p>list ipserver-interface //查看IPSI板卡状态</p>
+<pre><code>IP SERVER INTERFACE INFORMATION
+</code></pre><p>Port Pri/   Primary/         Primary/         Primary/                State Of</p>
+<p>Ntwk Sec    Secondary        Secondary        Secondary Serv  Control Health</p>
+<p>Num  Bd Loc IP Address       Host Name        DHCP ID   State State   C P E G</p>
+<hr>
+<p>  1   1A01  10.228.64.31     10.228.64.31     ipsi-A01a  IN   actv-aa 0.0.0.0</p>
+<pre><code>1B01  10.228.64.32     10.228.64.32     ipsi-A01b  IN   standby 0.0.0.0
+</code></pre><p>配置完毕，通过CM访问IPSI</p>
+<p>ipsisession -d -c 01a //禁用ipsi访问</p>
+<p>ipsisession -c 01a   //启用ipsi访问，并记录随机密码</p>
+<p>ssh init@ipsi-a01a //SSH连接到IPSI</p>
+<h2 id="IPSI恢复出厂设置"><a href="#IPSI恢复出厂设置" class="headerlink" title="IPSI恢复出厂设置"></a>IPSI恢复出厂设置</h2><p>重新插拔板卡，当LED显示字母闪动时按一下reset，设置成A，等待3秒后自动调整到第二位字符，设置成0，再过3秒把第三位也设置成0即可</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/29/gateway-network-config/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -697,7 +899,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
